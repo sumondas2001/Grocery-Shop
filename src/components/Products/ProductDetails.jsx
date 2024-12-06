@@ -68,19 +68,19 @@ const ProductDetails = () => {
                               </div>
 
                          </div>
-                         <div className="flex lg:gap-10 gap-4 mt-6">
-                              <button className="hover:bg-[#FF6A1A] lg:px-8 px-4 py-4 flex items-center  gap-2 text-lg font-medium hover:text-white" >
+                         <div className="flex lg:flex-row flex-col lg:gap-10 gap-4 mt-6">
+                              <button className="hover:bg-[#FF6A1A] lg:px-8 px-4 py-4 flex items-center  gap-2 text-lg font-medium hover:text-white justify-center" >
                                    <FaHeart></FaHeart>
                                    <p className="font-bold">Save as favorite</p>
                               </button>
 
-                              <button className="bg-[#FF6A1A] lg:px-8 px-4 py-4 text-white flex items-center  gap-2 text-lg font-medium"><FaCartShopping /> Add to cart </button>
+                              <button className="bg-[#FF6A1A] justify-center lg:px-8 px-4 py-4 text-white flex items-center  gap-2 text-lg font-medium"><FaCartShopping /> Add to cart </button>
                          </div>
 
                     </div>
                </div>
                <div className="mt-10">
-                    <h1 className="text-xl font-bold border border-gray-400 inline-block px-4 py-2">Description</h1>
+                    <h1 className="text-xl font-bold border bg-[#749B3F] text-white border-gray-400 inline-block px-4 py-2">Description</h1>
                     <p className="mt-10 lg:w-3/5 w-full text-sm font-medium">{description}</p>
                </div>
                <div className="text-center space-y-4 mt-14">
