@@ -1,8 +1,8 @@
 
 const HeroSection = () => {
      return (
-          <div>
-               <div className="flex justify-between items-center lg:ml-28  ml-4">
+          <div className="lg:max-w-[1200px] md:max-w-[750px]  max-w-[400px] mx-auto">
+               <div className="flex justify-between items-center ">
                     <div className="space-y-4">
                          <h5 className="text-xl font-medium text-green-800">Welcome to Fresh Harvest</h5>
                          <h1 className="lg:text-7xl text-xl font-medium">Fresh Fruits and <br /> Vegetables</h1>

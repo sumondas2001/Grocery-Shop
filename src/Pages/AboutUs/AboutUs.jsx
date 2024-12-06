@@ -1,3 +1,5 @@
+import SpecialOffer from "../../components/SpecialOffer/SpecialOffer";
+
 const logo = "../../../src/assets/icon/Logo.svg";
 
 const AboutUs = () => {
@@ -20,6 +22,8 @@ const AboutUs = () => {
                     <p className="text-base font-normal">Welcome to Fresh Harvest, your premier destination for high-quality and fresh produce. We are passionate about providing you with the finest fruits, vegetables, and salad ingredients to nourish your body and delight your taste buds. With a commitment to excellence, sustainability, and customer satisfaction, Fresh Harvest is here to revolutionize your grocery shopping experience.</p>
                     <button className="text-[#FF6A1A] border border-[#FF6A1A] px-4 py-2 hover:bg-[#FF6A1A] hover:text-white">Read More</button>
                </div>
+
+               <SpecialOffer></SpecialOffer>
           </div>
      );
 };
