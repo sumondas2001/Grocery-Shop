@@ -1,15 +1,16 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router";
 import { FaStar } from "react-icons/fa6";
 import Product from "./Product";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { cartContext } from "../context/Context";
 
 
 const ProductDetails = () => {
      const [count, setCount] = useState(0)
-
+     const { setAddToCard, setAddToFavorites, addToCard, addToFavorites } = useContext(cartContext)
      const { id } = useParams();
      const [product, setProduct] = useState([]);
      const [products, setProducts] = useState([]);
@@ -35,7 +36,14 @@ const ProductDetails = () => {
                .catch(error => {
                     toast.error(error)
                })
-     }, [id])
+     }, [id]);
+     const handelAddToCard = () => {
+          setAddToCard(addToCard + 1)
+
+     }
+     const handelAddToFavorites = () => {
+          setAddToFavorites(addToFavorites + 1)
+     }
      return (
           <div className="lg:max-w-[1200px]  md:max-w-[750px]  max-w-[400px] mx-auto mt-10 mb-10">
                <div className="flex lg:flex-row flex-col items-center justify-between ">
@@ -69,12 +77,12 @@ const ProductDetails = () => {
 
                          </div>
                          <div className="flex lg:flex-row flex-col lg:gap-10 gap-4 mt-6">
-                              <button className="hover:bg-[#FF6A1A] lg:px-8 px-4 py-4 flex items-center  gap-2 text-lg font-medium hover:text-white justify-center" >
+                              <button onClick={handelAddToFavorites} className="hover:bg-[#FF6A1A] lg:px-8 px-4 py-4 flex items-center  gap-2 text-lg font-medium hover:text-white justify-center" >
                                    <FaHeart></FaHeart>
                                    <p className="font-bold">Save as favorite</p>
                               </button>
 
-                              <button className="bg-[#FF6A1A] justify-center lg:px-8 px-4 py-4 text-white flex items-center  gap-2 text-lg font-medium"><FaCartShopping /> Add to cart </button>
+                              <button onClick={handelAddToCard} className="bg-[#FF6A1A] justify-center lg:px-8 px-4 py-4 text-white flex items-center  gap-2 text-lg font-medium"><FaCartShopping /> Add to cart </button>
                          </div>
 
                     </div>

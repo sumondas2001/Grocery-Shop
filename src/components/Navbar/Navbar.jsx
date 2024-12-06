@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 const logo = "../../../src/assets/icon/Logo.svg";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { cartContext } from "../context/Context";
 
 
 const Navbar = () => {
+     const { addToCard } = useContext(cartContext);
+     const { addToFavorites } = useContext(cartContext);
+
      // mobile device and tablet  dropDown icon
 
      const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -163,13 +167,15 @@ const Navbar = () => {
                          </div>
 
                          <div className="flex items-center gap-5">
-                              <div className="flex items-center gap-2 text-[rgba(116,155,63,1)]">
+                              <div className="flex relative items-center gap-2 text-[rgba(116,155,63,1)]">
                                    <FaHeart className="text-xl"></FaHeart>
                                    <h1 className="hidden  md:block">Favorites</h1>
+                                   <p className="bg-red-500 text-xs rounded-full -left-0 -top-2 px-1 absolute text-white">{addToFavorites}</p>
                               </div>
-                              <div className="flex items-center gap-2  text-[rgba(116,155,63,1)]">
-                                   <FaCartShopping></FaCartShopping>
-                                   <h1 className="hidden  md:block">Cart</h1>
+                              <div className="flex items-center gap-2 relative  text-[rgba(116,155,63,1)]">
+                                   <FaCartShopping className=""></FaCartShopping>
+                                   <h1 className="hidden   md:block">Cart</h1>
+                                   <p className="bg-red-500 text-xs rounded-full -left-0 -top-2 px-1 absolute text-white">{addToCard}</p>
                               </div>
                               <Link to={"/login"}>
                                    <button className="text-sm  font-semibold px-3 flex items-center border-2 border-black rounded-md text-black py-2">
