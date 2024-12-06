@@ -61,9 +61,9 @@ const ProductDetails = () => {
                          <div className="flex gap-4 items-center mt-14">
                               <h1 className="text-xl font-medium">Quantity</h1>
                               <div className="flex items-center  ">
-                                   <button className="text-4xl text- font-medium border px-2 border-gray-300" onClick={() => setCount((count) => count + 1)}>+</button>
-                                   <h1 className="text-3xl text- font-medium  py-2 px-2 ">{count}</h1>
                                    <button className="text-4xl text- font-medium  px-2 border-gray-300 border " onClick={() => setCount((count) => count - 1)}>-</button>
+                                   <h1 className="text-3xl text- font-medium  py-2 px-2 ">{count}</h1>
+                                   <button className="text-4xl text- font-medium border px-2 border-gray-300" onClick={() => setCount((count) => count + 1)}>+</button>
                                    <h1 className="text-2xl ml-2 text- font-medium  border-black">/kg</h1>
                               </div>
 

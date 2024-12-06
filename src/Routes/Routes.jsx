@@ -5,6 +5,8 @@ import Shop from "../Pages/Shop/Shop";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Blog from "../Pages/Blog/Blog";
 import ProductDetails from "../components/Products/ProductDetails";
+import Login from "../components/Login/Login";
+import SingUp from "../components/SingUp/SingUp";
 
 const router = createBrowserRouter([
      {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
                {
                     path: '/products/:id',
                     element: <ProductDetails></ProductDetails>
+               },
+               {
+                    path: '/login',
+                    element: <Login></Login>
+               },
+               {
+                    path: '/singUp',
+                    element: <SingUp></SingUp>
                }
           ]
      }
